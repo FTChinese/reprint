@@ -1,9 +1,7 @@
 # FTChinese Reprint API Guideline
 For now, there are only two APIs for your to access FTChinese content for reprint. 
 ## Latest Headlines
-It shows the latest headlines that can be syndicated for reprint. 
-
-### Let's show an Example first
+It shows the latest headlines that can be syndicated for reprint. An Example here: 
 
 ```
 {
@@ -115,39 +113,39 @@ It shows the latest headlines that can be syndicated for reprint.
 }
 ```
 
-### What are the fields for? 
+#### What are the fields for? 
 For your reprint business, you only need to look at the **items** array. Please note that all the fileds might be empty, null or undefined. It's important to **always verify all the fields** for availability and correct format when programming, to avoid fatal errors. And here are the fields that matter: 
-#### headline
+* **headline**
 The headline of the article in string format. 
-#### eheadline
+* **eheadline**
 The English headline of the article in string format. Depending on your syndication contract, the English headline might be empty.  
-#### image
+* **image**
 The image url of the story. You might not have the legal authorization to use the image, in which case the image field will be empty. 
-#### longlead
+* **longlead**
 The lead for the story. 
-#### tag
+* **tag**
 Topics mentioned in the story. 
-#### area
+* **area**
 Regions and countries mentioned in the story. 
-#### industry
+* **industry**
 Industries mentionsed by the story. 
-#### author
+* **author**
 The author or authors of the story, in string format. 
-#### timeStamp
+* **timeStamp**
 The unix time stamp of the story publishing or updating time. If the story is updated, the timeStamp will be updated as well. 
-#### type
+* **type**
 For reprint, the type will always be story. 
-#### id
+* **id**
 The unique id of the story. Use this to get the detail information for the story. 
 
-### How to access the headline list? 
-We'll share the access url and token later, after consulting the legal term. 
+#### How to access the headline list? 
+We'll share the access url and token later, after completing the legal process. 
 
 
 
 ## Detail
 
-### Let's look at an example
+Let's look at an example
 
 ```
 {
@@ -168,32 +166,32 @@ We'll share the access url and token later, after consulting the legal term.
   }
 }
 ```
-### What are the fields for? 
-#### id
+What are the fields for? 
+* **id**
 The unique id of the story. You used this to get the detail information for the story. 
-#### cheadline
+* **cheadline**
 The Chinese headline of the article in string format. It is the same as **headline** in the headline list API mentioned above. 
-#### clongleadbody
+* **clongleadbody**
 The lead for the story. It is the same as **longlead** mentioned above. 
-#### cbody
+* **cbody**
 The Chinese body text in HTML. If you are rendering it on a web site or in a web view of an app, just use it directly. 
-#### ebody
+* **ebody**
 The English body text in HTML. This field might be empty if you don't have the syndication authorization for English content. 
-#### cauthor
+* **cauthor**
 The Chinese author in String. 
-#### tag
+* **tag**
 Topics mentioned in the story. 
-#### area
+* **area**
 Regions and countries mentioned in the story. 
-#### industry
+* **industry**
 Industries mentionsed by the story. 
-#### pubdate
+* **pubdate**
 Unix time stamp of the date that of publishing. Note that the time will be 00:00, so use it only for the date, not time. 
-#### last_publish_time
+* **last_publish_time**
 Unix time stamp of when the story is last updated or edited. Sometimes a story might be updated months after it is first published. In this case, you might want to display something like "Published on Jan 1st, 2021, updated at 13:30PM Aug 30th, 2021". 
-#### story_pic
+* **story_pic**
 The pictures that are supposed to be shown as of a cover of the story. Just look for the **cover** property for the image url. If you don't have authorization of the image, this will be empty. In that case, you might need to find a story image using your own authorized image service, such as Getty Image. 
 
-
-
+#### How to access the detail info? 
+We'll share the access url and token later, after completing the legal process. 
 
