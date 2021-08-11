@@ -1,7 +1,7 @@
 # FTChinese Reprint API Guideline
 For now, there are only two APIs for your to access FTChinese content for reprint. 
 ## Latest Headlines
-It shows the latest headlines that can be syndicated for reprint. An Example here: 
+It shows the latest headlines that can be syndicated for reprint in JSON format. An example here: 
 
 ```
 {
@@ -71,14 +71,13 @@ It shows the latest headlines that can be syndicated for reprint. An Example her
 }
 ```
 
-#### What are the fields for? 
-For your reprint business, you only need to look at the **items** array. Please note that all the fileds might be empty, null or undefined. It's important to **always verify all the fields** for availability and correct format when programming, to avoid fatal errors. And here are the fields that matter: 
+It's important to **always verify all the fields** for availability and correct format when programming, to avoid fatal errors. And here is an explaination of the  fields: 
 * **headline**
 The headline of the article in string format. 
 * **eheadline**
 The English headline of the article in string format. Depending on your syndication contract, the English headline might be empty.  
 * **image**
-The image url of the story. You might not have the legal authorization to use the image, in which case the image field will be empty. 
+The image url of the story. You might not have the legal authorization to use the image, in which case the image field will be empty and you might need to find a story image using your own authorized image service, such as Getty Image. The image might be very large. So it is recomended that you use some kind of image service on your server side so that you can serve the exact size of image files that your end-users needed. 
 * **lead**
 The lead for the story. 
 * **tag**
@@ -144,8 +143,7 @@ Unix time stamp of the date that of publishing. Note that the time will be 00:00
 * **update_time**
 Unix time stamp of when the story is last updated or edited. Sometimes a story might be updated months after it is first published. In this case, you might want to display something like "Published on Jan 1st, 2021, updated at 13:30PM Aug 30th, 2021". 
 * **image**
-The image url of the story. If you don't have authorization of the image, this will be empty. In that case, you might need to find a story image using your own authorized image service, such as Getty Image. 
+The image url of the story. You might not have the legal authorization to use the image, in which case the image field will be empty and you might need to find a story image using your own authorized image service, such as Getty Image. The image might be very large. So it is recomended that you use some kind of image service on your server side so that you can serve the exact size of image files that your end-users needed. 
 
 #### How to access the detail info? 
 We'll share the access url and token later, after completing the legal process. 
-
